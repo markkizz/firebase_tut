@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>firebase</title>
+  </head>
+  <body>
+    <h1>firebase tut</h1>
+    <article>
+      <ul>
+        <li>mark</li>
+        <li>mean</li>
+        <li>eiei</li>
+      </ul>
+    </article>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+      https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyDA2It7H8a7CvaLnv31stce9-0a_pi6f7w",
+        authDomain: "testfirebase-13da7.firebaseapp.com",
+        databaseURL: "https://testfirebase-13da7.firebaseio.com",
+        projectId: "testfirebase-13da7",
+        storageBucket: "testfirebase-13da7.appspot.com",
+        messagingSenderId: "964893062603",
+        appId: "1:964893062603:web:3351b9f1a62dc2991af24e",
+        measurementId: "G-MW8FQ0137D"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+  </body>
+</html>
