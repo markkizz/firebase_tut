@@ -1,41 +1,43 @@
 import React, { Component } from "react";
-import trim from 'trim'
+import trim from "trim";
 class MessageBox extends Component {
   state = {
-    message: ''
-  }
+    message: ""
+  };
 
-  handleChange = (e) => {
+  handleChange = e => {
     this.setState({
       message: e.target.value
     });
-  }
+  };
 
-  handleKeyup = (e) => {
-    if(e.keyCode === 13 && trim(e.target.value) !== ''){
+  handleKeyup = e => {
+    if (trim(e.target.value) !== "") {
       e.preventDefault();
-      let dbCon = this.props.db.database().ref('/messages');
-      dbCon.push({
-        message: trim(e.target.value)
+      const dbRef = this.props.db.database().ref("/messages");
+      dbRef.push({
+        value: trim(e.target.value)
       });
       this.setState({
-        message: ''
+        message: ""
       });
     }
-  }
+  };
 
   render() {
     return (
-      <form>
-        <textarea
-          className="textarea"
-          placeholder="Type a message"
-          cols="100"
-          onChange={this.onChange}
-          onKeyUp={this.onKeyup}
-          value={this.state.message}
-        />
-      </form>
+      <>
+        <form>
+          <textarea
+            className="textarea"
+            placeholder="Type a message"
+            cols="100"
+            onChange={this.onChange}
+            // value={this.state.message}
+          />
+        </form>
+        <button onKeyUp={this.onKeyup}>create</button>
+      </>
     );
   }
 }
