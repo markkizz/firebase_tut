@@ -6,10 +6,19 @@ import { Divider, Button } from '@material-ui/core';
 import SidebarItem from '../SidebarItem/SidebarItem';
 
 export class Sidebar extends Component {
+  state = {
+    addingNote: false,
+    title: null
+  }
   render() {
+    const {notes, selectedNoteIndex, classes} = this.props
     return (
       <div>
-        <h1>Hello Sidebar</h1>
+        <Button
+        onClick
+        >
+          New Note
+        </Button>
       </div>
     )
   }
